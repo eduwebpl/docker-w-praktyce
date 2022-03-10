@@ -1,6 +1,6 @@
 
 
-FROM node:14.17.0-alpine
+FROM node:14.17.0-slim
 
 # set this with shell variables at build-time.
 # If they aren't set, then not-set will be default.
@@ -10,6 +10,7 @@ ARG SOURCE_COMMIT=not-set
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
+# www.google.com.
 # labels from https://github.com/opencontainers/image-spec/blob/master/annotations.md
 LABEL org.opencontainers.image.authors=author@domain
 LABEL org.opencontainers.image.created=$CREATED_DATE
