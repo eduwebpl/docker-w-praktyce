@@ -6,6 +6,6 @@ services:
       - .:/app
     ports:
       - 8080:8080
-    command: npm run dev --prefix /app
+    command: node /app/src/index.js
     # command: bash -c "while true; do sleep 360; done"
     

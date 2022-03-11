@@ -9,7 +9,15 @@ app.get('/hello', (req, res) => {
 });
 
 app.listen(port);
-// setInterval(() => {
- 
-//  console.log('hello world');
-// }, 1000);
+
+const handler = async (code) => {
+ console.log('Gracefully shutting down...');
+ await new Promise(resolve => setTimeout(resolve, 300));
+ console.log('Ok, bye!');
+ process.exit(code);
+};
+
+const events = ['exit', 'SIGINT', 'SIGTERM', 'SIGQUIT'];
+events.forEach(event => {
+ process.on(event, handler);
+});
