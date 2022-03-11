@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  app: 
+    image: node:17
+    volumes:
+      - .:/app
+    ports:
+      - 8080:8080
+    command: node /app/src/index.js
+    # command: npm run dev --prefix /app
