@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const port = 8080;
+const morgan = require('morgan');
+
+app.use(morgan('combined'));
 
 app.use(express.static('/app/src/static'));
  

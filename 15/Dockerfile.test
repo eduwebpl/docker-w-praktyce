@@ -1,0 +1,9 @@
+FROM debian
+
+RUN mkdir -p /var/log/custom/
+RUN touch /var/log/custom/access.log && touch /var/log/custom/error.log
+
+RUN ln -sf /proc/1/fd/1 /var/log/custom/access.log \
+ && ln -sf /proc/1/fd/2 /var/log/custom/error.log
+
+CMD bash -c "while true; do sleep 3600; done"

@@ -8,4 +8,6 @@ services:
       - 8080:8080
     command: node /app/src/index.js
     # command: npm run dev --prefix /app
-    
+  alternative-logging: 
+    image: docker/custom-logs
+    command: bash -c "while true; do sleep 3600; done"
